@@ -1,0 +1,11 @@
+{
+  "breakdown_event": {
+    "id": "BREAKDOWN001",
+    "windmill_id": "WM003",
+    "breakdown_time": "2024-01-18T07:00:00",
+    "description": "Generator failure - complete shutdown",
+    "estimated_repair_duration_hours": 10,
+    "required_qualifications": ["emergency_repairs", "corrective"]
+  }
+}
+

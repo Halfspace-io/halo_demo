@@ -1,0 +1,11 @@
+{
+  "breakdown_event": {
+    "id": "BREAKDOWN002",
+    "windmill_id": "WM008",
+    "breakdown_time": "2024-01-21T10:30:00",
+    "description": "Turbine shutdown",
+    "estimated_repair_duration_hours": 8,
+    "required_qualifications": ["emergency_repairs", "corrective"]
+  }
+}
+

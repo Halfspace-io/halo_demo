@@ -1,0 +1,23 @@
+{
+  "resources": [
+    {
+      "id": "CREW002",
+      "type": "maintenance_crew",
+      "name": "Crew Beta",
+      "daily_working_hours": 10,
+      "rest_hours_after_work": 12,
+      "qualifications": ["corrective", "emergency_repairs"],
+      "base_location": "port"
+    },
+    {
+      "id": "CREW003",
+      "type": "maintenance_crew",
+      "name": "Crew Gamma",
+      "daily_working_hours": 8,
+      "rest_hours_after_work": 12,
+      "qualifications": ["preventive"],
+      "base_location": "port"
+    }
+  ]
+}
+

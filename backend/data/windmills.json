@@ -1,0 +1,85 @@
+{
+  "windmills": [
+    {
+      "id": "WM001",
+      "name": "Turbine Alpha",
+      "location": {"lat": 55.5, "lon": 7.2},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM002",
+      "name": "Turbine Beta",
+      "location": {"lat": 55.6, "lon": 7.3},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM003",
+      "name": "Turbine Gamma",
+      "location": {"lat": 55.4, "lon": 7.1},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM004",
+      "name": "Turbine Delta",
+      "location": {"lat": 55.7, "lon": 7.4},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM005",
+      "name": "Turbine Epsilon",
+      "location": {"lat": 55.5, "lon": 7.5},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM006",
+      "name": "Turbine Zeta",
+      "location": {"lat": 55.6, "lon": 7.1},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM007",
+      "name": "Turbine Eta",
+      "location": {"lat": 55.3, "lon": 7.3},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    },
+    {
+      "id": "WM008",
+      "name": "Turbine Theta",
+      "location": {"lat": 55.8, "lon": 7.2},
+      "capacity_mw": 8.0,
+      "revenue_per_mwh": 50.0,
+      "rated_wind_speed_ms": 13.0,
+      "cut_in_speed_ms": 3.5,
+      "cut_out_speed_ms": 25.0
+    }
+  ]
+}
+
