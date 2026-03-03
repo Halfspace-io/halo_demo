@@ -19,8 +19,16 @@
   }
 
   function handleClick(bd) {
-    store.activeBreakdown = bd;
-    onReplanWithBreakdown(bd.file);
+    if (store.activeBreakdown?.file === bd.file) {
+      // Deselect — revert to original schedule
+      store.activeBreakdown = null;
+      store.optimizedSchedule = null;
+      store.currentExplanation = null;
+      store.currentView = 'original';
+    } else {
+      store.activeBreakdown = bd;
+      onReplanWithBreakdown(bd.file);
+    }
   }
 </script>
 
@@ -42,11 +50,11 @@
             <div class="flex items-center justify-between mb-2">
               <span class="font-semibold text-(--color-orsted) text-sm">Scenario #{i + 1}</span>
               <button
-                class="px-3 py-1.5 bg-(--color-orsted) text-white rounded-md text-xs font-semibold cursor-pointer transition-colors hover:bg-(--color-orsted-dark) disabled:opacity-50 disabled:cursor-not-allowed"
+                class="px-3 py-1.5 rounded-md text-xs font-semibold cursor-pointer transition-colors disabled:opacity-50 disabled:cursor-not-allowed {store.activeBreakdown?.file === bd.file ? 'bg-(--color-surface-alt) text-(--color-text-primary) border border-(--color-border-subtle) hover:bg-(--color-border-subtle)' : 'bg-(--color-orsted) text-white hover:bg-(--color-orsted-dark)'}"
                 onclick={() => handleClick(bd)}
                 disabled={store.loading}
               >
-                Re-plan with this
+                {store.activeBreakdown?.file === bd.file ? 'Deselect' : 'Re-plan with this'}
               </button>
             </div>
             <div class="text-xs leading-relaxed text-(--color-text-primary) space-y-0.5">

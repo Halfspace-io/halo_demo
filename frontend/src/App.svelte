@@ -5,7 +5,6 @@
   import Sidebar from './components/Sidebar.svelte';
   import ScheduleView from './components/ScheduleView.svelte';
   import RevenuePanel from './components/RevenuePanel.svelte';
-  import ExplanationPanel from './components/ExplanationPanel.svelte';
 
   onMount(() => {
     loadInitialData();
@@ -115,6 +114,5 @@
 
     <RevenuePanel />
     <ScheduleView />
-    <ExplanationPanel />
   </main>
 </div>

@@ -56,7 +56,7 @@
   {@const circleSize = rowHeight - 10}
   {@const centerLeft = left + width / 2}
   <div
-    class="absolute rounded-full border-2 flex items-center justify-center cursor-pointer transition-all duration-150 z-2 hover:scale-110 hover:z-5"
+    class="group absolute rounded-full border-2 flex items-center justify-center cursor-pointer transition-all duration-150 z-2 hover:scale-110 hover:z-5"
     style:top="{rowTop}px"
     style:left="calc({centerLeft}% - {circleSize / 2}px)"
     style:width="{circleSize}px"
@@ -66,7 +66,7 @@
     style:box-shadow="0 2px 6px rgba(0,0,0,0.15)"
     title={tooltip}
   >
-    <span class="text-[10px] font-bold text-white pointer-events-none drop-shadow-sm">{taskLabel}</span>
+    <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded bg-gray-800 text-white text-[10px] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">{taskLabel}</span>
   </div>
 {:else}
   {@const segments = overtimeSplit.segments}
@@ -84,7 +84,7 @@
     {@const radius = segments.length === 1 ? '5px' : isFirst ? '5px 0 0 5px' : isLast ? '0 5px 5px 0' : '0'}
     {#if segWidth > 0}
       <div
-        class="absolute border flex items-center justify-center cursor-pointer transition-all duration-150 z-2 hover:-translate-y-0.5 hover:z-5"
+        class="group absolute border flex items-center justify-center cursor-pointer transition-all duration-150 z-2 hover:-translate-y-0.5 hover:z-5"
         style:top="{rowTop}px"
         style:left="{segLeft}%"
         style:width="{segWidth}%"
@@ -96,7 +96,7 @@
         title={tooltip}
       >
         {#if i === largestSegIndex}
-          <span class="text-[10px] font-semibold text-white pointer-events-none drop-shadow-sm truncate px-1">{taskLabel}</span>
+          <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded bg-gray-800 text-white text-[10px] font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">{taskLabel}</span>
         {/if}
       </div>
     {/if}
