@@ -2,7 +2,36 @@
   "permissions": {
     "allow": [
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(uv:*)",
+      "Bash(PYTHONPATH=backend backend/.venv/bin/python:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(pkill:*)",
+      "Bash(timeout 8 npm run dev:*)",
+      "Bash(npm run dev:*)",
+      "WebSearch",
+      "WebFetch(domain:kontrapunkt.com)",
+      "WebFetch(domain:www.underconsideration.com)",
+      "WebFetch(domain:brandfetch.com)",
+      "WebFetch(domain:brandguide.orsted.com)",
+      "WebFetch(domain:www.worksdesign.com)",
+      "WebFetch(domain:brandingsource.blogspot.com)",
+      "WebFetch(domain:orsted.com)",
+      "WebFetch(domain:en.likefont.com)",
+      "WebFetch(domain:www.ci-portal.de)",
+      "WebFetch(domain:louiseryberg.com)",
+      "WebFetch(domain:sortefaar.com)",
+      "Bash(npx vite build:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRedesign frontend with Svelte 5, Tailwind CSS, and Ørsted CVI\n\nReplace vanilla HTML/JS/CSS frontend with a Svelte 5 + Vite app using\nTailwind CSS v4. Apply Ørsted corporate visual identity \\(cerulean blue\n#009ADD, Inter font, no pure black, Scandinavian clean design\\).\n\nKey changes:\n- Collapsible sidebar with icon strip when collapsed\n- Revenue impact panel moved above schedule with delta percentages\n- AI analysis as a clickable drawer below the schedule\n- Gantt chart with softer colors, drop shadows, proper task names\n- Timeline trimmed to remove empty trailing space\n- Breakdowns renamed to Scenarios\n- Fix OR-Tools float->int bug in optimizer parameter passing\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(gh auth status:*)"
     ]
   }
 }
