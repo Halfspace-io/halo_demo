@@ -5,6 +5,7 @@
   import Sidebar from './components/Sidebar.svelte';
   import ScheduleView from './components/ScheduleView.svelte';
   import RevenuePanel from './components/RevenuePanel.svelte';
+  import ExplanationPanel from './components/ExplanationPanel.svelte';
 
   onMount(() => {
     loadInitialData();
@@ -102,7 +103,7 @@
 
   <main class="flex-1 min-w-0 p-6 overflow-y-auto bg-(--color-surface) flex flex-col gap-5">
     <header>
-      <h1 class="text-2xl font-bold text-(--color-text-primary) tracking-tight">Offshore Wind Re-planner</h1>
+      <h1 class="text-2xl font-bold text-(--color-text-primary) tracking-tight">Hal&oslash;</h1>
       <p class="text-sm text-(--color-text-muted) mt-0.5">Optimize maintenance schedules when breakdowns occur</p>
     </header>
 
@@ -114,5 +115,6 @@
 
     <RevenuePanel />
     <ScheduleView />
+    <ExplanationPanel />
   </main>
 </div>

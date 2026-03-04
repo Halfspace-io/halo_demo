@@ -2,16 +2,13 @@
   import { store } from '../lib/state.svelte.js';
   import ConfigPanel from './ConfigPanel.svelte';
   import BreakdownPanel from './BreakdownPanel.svelte';
-  import ExplanationPanel from './ExplanationPanel.svelte';
 
   let { onOptimize, onReplanWithBreakdown } = $props();
 
-  // null = collapsed, 'config' | 'scenarios' | 'ai' = expanded showing that panel
+  // null = collapsed, 'config' | 'scenarios' = expanded showing that panel
   let activePanel = $state(null);
 
   let expanded = $derived(activePanel !== null);
-  let aiAvailable = $derived(store.currentView === 'optimized' && store.currentExplanation !== null);
-  let aiLoading = $derived(store.currentExplanation?.loading === true);
 
   function togglePanel(panel) {
     activePanel = activePanel === panel ? null : panel;
@@ -49,21 +46,6 @@
           <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
         </svg>
       </button>
-      <!-- AI Insights icon -->
-      {#if aiAvailable}
-        <button
-          class="relative w-10 h-10 flex items-center justify-center rounded-lg transition-colors cursor-pointer {activePanel === 'ai' ? 'bg-(--color-orsted)/10 text-(--color-orsted)' : 'text-(--color-text-muted) hover:bg-(--color-surface) hover:text-(--color-orsted)'}"
-          title="AI Insights"
-          onclick={() => togglePanel('ai')}
-        >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09ZM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456ZM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423Z" />
-          </svg>
-          {#if aiLoading}
-            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-(--color-orsted) rounded-full animate-pulse"></span>
-          {/if}
-        </button>
-      {/if}
     </div>
   </div>
 
@@ -73,10 +55,10 @@
       <div class="flex items-center justify-between px-4 py-4 border-b border-(--color-border-faint)">
         <div>
           <div class="text-sm font-bold text-(--color-text-primary)">
-            {activePanel === 'config' ? 'Configuration' : activePanel === 'scenarios' ? 'Scenarios' : 'AI Analysis'}
+            {activePanel === 'config' ? 'Configuration' : 'Scenarios'}
           </div>
           <div class="text-xs text-(--color-text-muted)">
-            {activePanel === 'config' ? 'Optimization parameters' : activePanel === 'scenarios' ? 'Breakdown scenarios' : 'Optimization insights'}
+            {activePanel === 'config' ? 'Optimization parameters' : 'Breakdown scenarios'}
           </div>
         </div>
         <button
@@ -95,8 +77,6 @@
           <ConfigPanel {onOptimize} />
         {:else if activePanel === 'scenarios'}
           <BreakdownPanel {onReplanWithBreakdown} />
-        {:else if activePanel === 'ai'}
-          <ExplanationPanel />
         {/if}
       </div>
     </div>
